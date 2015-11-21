@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-size: 1rem;
   font-size: 100%;
-  font-family: Inconsolata, monospace;
+  font-family: 'Inconsolata', monospace;
   line-height: 1.6;
   min-width: 26.25rem;
   background-color: #203440;
@@ -138,7 +138,7 @@ code, dl, p, em, q {
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 2rem;
   position: relative;
 }
@@ -154,6 +154,7 @@ code, dl, p, em, q {
 }
 
 #intro {
+  min-height: 100vh;
   padding-top: 25vh;
 }
 
