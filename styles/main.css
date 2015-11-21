@@ -250,7 +250,7 @@ ins{
 .bounce {
   position: absolute;
   left: 50%;
-  bottom: 5vh;
+  bottom: 10vh;
   margin-left:-20px;
   width: 40px;
   height: 40px;
