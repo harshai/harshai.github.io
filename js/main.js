@@ -13,7 +13,7 @@ $(function(){
 
   $('#intro').t({
     mistype: 0.5,
-    speed: 25,
+    speed: 40,
     speed_vary:true,
     prefix: "> ",
     tag: "code",
