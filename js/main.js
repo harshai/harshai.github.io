@@ -4,15 +4,15 @@ $(function(){
       $creations = $('#creations').addClass('hidden'),
       $scrollBtn = $('.scroll').remove();
       $('footer').addClass('hidden')
-
+  $main.data("scrollBtn", $scrollBtn)
   $main
     .on('click', '.scroll' ,function(e){
-      var href = $(this).hasClass('ulta') ? "#intro" : "#creations";
+      var href = $.attr(this, "href")
       $('html, body').animate({
           scrollTop: $(href).offset().top
         }, 250);
       $(this).blur();
-      $('.scroll').toggleClass("ulta")
+      // $('.scroll').toggleClass("ulta")
       return false;
     }).one('click', '.skip', function(){
       var content = $.parseHTML($("noscript").text());
@@ -27,7 +27,7 @@ $(function(){
 
 
 
-var observer = new FontFaceObserver('Inconsolata');
+var observer = new FontFaceObserver('Inconsolatas');
 observer.check().then(function () {
   $('html').toggleClass('font-loaded font-not-loaded');
   !$('#main').hasClass('skip-typing') && $('#intro').t({
@@ -40,7 +40,7 @@ observer.check().then(function () {
       $el.wrapInner("<div class='inner' />")
     },
     fin: function($el){
-      $el.append($scrollBtn)
+      $el.append($('#main').data("scrollBtn"));
       $('.hidden').removeClass("hidden");
       $('.skip').remove()
     }
@@ -56,7 +56,7 @@ observer.check().then(function () {
         $el.wrapInner("<div class='inner' />")
       },
       fin: function($el){
-        $el.append($scrollBtn)
+        $el.append($('#main').data("scrollBtn"))
         $('.hidden').removeClass("hidden");
         $('.skip').remove()
       }
