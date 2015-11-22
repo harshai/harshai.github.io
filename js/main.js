@@ -46,5 +46,19 @@ observer.check().then(function () {
     }
   })
 }, function () {
-  $('.skip').trigger('click')
+  $('#intro').t({
+      speed: 40,
+      speed_vary:true,
+      prefix: "> ",
+      tag: "code",
+      init: function($el) {
+        $el.prepend('<ins><span class="prefix"></span></ins>')
+        $el.wrapInner("<div class='inner' />")
+      },
+      fin: function($el){
+        $el.append($scrollBtn)
+        $('.hidden').removeClass("hidden");
+        $('.skip').remove()
+      }
+    })
 });
