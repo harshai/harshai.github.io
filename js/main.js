@@ -27,7 +27,7 @@ $(function(){
 
 
 
-var observer = new FontFaceObserver('Inconsolatas');
+var observer = new FontFaceObserver('Inconsolata');
 observer.check().then(function () {
   $('html').toggleClass('font-loaded font-not-loaded');
   !$('#main').hasClass('skip-typing') && $('#intro').t({
