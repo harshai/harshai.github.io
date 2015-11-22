@@ -9,11 +9,36 @@ html {
   box-sizing: inherit;
 }
 
+.js .no-js{
+  display: none;
+}
+
+.font-not-loaded #intro {
+  display: none;
+}
+
+/*.font-not-loaded #intro .inner:before{
+  content: "Loading";
+  color: #FC4747;
+  font-family: monospace;
+  float: left;
+}
+*/
+.font-loaded body{
+  font-family: 'Inconsolata';
+}
+
+.skip-typing > #intro{
+  display: block !important;
+}
+
+
+
 body {
   margin: 0;
   font-size: 1rem;
   font-size: 100%;
-  font-family: 'Inconsolata', monospace;
+  font-family: monospace;
   line-height: 1.6;
   min-width: 26.25rem;
   background-color: #203440;
@@ -190,7 +215,8 @@ ins{
 .link {
   color: #FC4747;
   transition: 250ms ease all;
-  outline-offset: 50px;
+  outline: 1px solid transparent; /*for animation to work on webkit*/
+  outline-offset: 0;
   cursor: pointer;
 }
 
@@ -200,14 +226,15 @@ ins{
 }
 
 .link:focus {
-  text-decoration: underline;
   outline: 1px dotted;
-  outline-offset: 3px;
+  outline-offset: 5px;
+  text-decoration: none;
+
 }
 
 
 .link:active {
-
+  text-decoration: underline;
 }
 
 .def-title{
@@ -268,8 +295,8 @@ ins{
   -webkit-animation:bounce 1s infinite;
   -moz-animation:bounce 1s infinite;
   animation:bounce 1s infinite;
-  text-indent: -9999px;
 }
+
 
 .ulta{
   transform: rotate(180deg);

@@ -1,5 +1,6 @@
 $(function(){
-  var $main = $('#main').append('<a href="#" class="skip link"> Skip typing</a>').append($.parseHTML($("noscript").text())),
+  var content = $.parseHTML($("noscript").text()),
+      $main = $('#main').append('<a href="#" class="skip link"> Skip typing</a>').append(content),
       $creations = $('#creations').addClass('hidden'),
       $scrollBtn = $('.scroll').remove();
       $('footer').addClass('hidden')
@@ -10,21 +11,26 @@ $(function(){
       $('html, body').animate({
           scrollTop: $(href).offset().top
         }, 250);
-        $(this).blur();
+      $(this).blur();
       $('.scroll').toggleClass("ulta")
       return false;
     }).one('click', '.skip', function(){
-      var content = $.parseHTML($("noscript").text())
-      $('#main').empty()
-        .append(content)
+      var content = $.parseHTML($("noscript").text());
+      $('#main').addClass('skip-typing')
+      $('#main').empty().append(content)
       $('#intro').wrapInner("<div class='inner' />")
       $(".inner > .prefix").remove();
-      $(".noscript").removeClass("noscript")
+      $(".noscript").removeClass("noscript");
       return false;
-    })
+    });
+});
 
-  $('#intro').t({
-    mistype: 0.5,
+
+
+var observer = new FontFaceObserver('Inconsolatas');
+observer.check().then(function () {
+  $('html').toggleClass('font-loaded font-not-loaded');
+  !$('#main').hasClass('skip-typing') && $('#intro').t({
     speed: 40,
     speed_vary:true,
     prefix: "> ",
@@ -39,4 +45,6 @@ $(function(){
       $('.skip').remove()
     }
   })
-})
+}, function () {
+  $('.skip').trigger('click')
+});
