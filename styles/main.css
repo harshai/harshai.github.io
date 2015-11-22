@@ -372,11 +372,10 @@ ins{
 }
 
 [data-tooltip]:hover:after, [data-tooltip]:focus:after{
-  background: #333;
-  background: rgba(0,0,0,.8);
+  background-color: #203440;
   border-radius: 5px;
   bottom: 26px;
-  color: #fff;
+  color: #F2F2F2;
   content: attr(data-tooltip);
   left: 20%;
   padding: 5px 15px;
@@ -391,7 +390,7 @@ ins{
 
 [data-tooltip]:hover:before, [data-tooltip]:focus:before{
   border: solid;
-  border-color: #333 transparent;
+  border-color: #203440 transparent;
   border-width: 6px 6px 0 6px;
   bottom: 20px;
   content: "";
