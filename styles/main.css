@@ -298,9 +298,7 @@ ins{
 
 .footer{
   font-size: 1rem;
-  padding: 2rem;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding: 3rem 2rem;
   text-align: center;
   background-color: #F2F2F2;
 }
@@ -312,6 +310,7 @@ ins{
 .link--footer:last-of-type{
   margin-right: 0;
 }
+
 
 @-moz-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -360,4 +359,49 @@ ins{
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
   }
+}
+
+[data-tooltip]:before, [data-tooltip]:after{
+  opacity: 0;
+  content: "";
+}
+
+[data-tooltip]{
+  display: inline;
+  position: relative;
+}
+
+[data-tooltip]:hover:after, [data-tooltip]:focus:after{
+  background: #333;
+  background: rgba(0,0,0,.8);
+  border-radius: 5px;
+  bottom: 26px;
+  color: #fff;
+  content: attr(data-tooltip);
+  left: 20%;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+  width: auto;
+  text-transform: none;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+
+[data-tooltip]:hover:before, [data-tooltip]:focus:before{
+  border: solid;
+  border-color: #333 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 20px;
+  content: "";
+  left: 50%;
+  position: absolute;
+  z-index: 99;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+[data-tooltip]:active:before, [data-tooltip]:active:after{
+  content: none;
 }
