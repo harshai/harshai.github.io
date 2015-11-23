@@ -298,17 +298,27 @@ ins{
 
 .footer{
   font-size: 1rem;
-  padding: 3rem 2rem;
+  padding: 2rem 0rem;
   text-align: center;
   background-color: #F2F2F2;
 }
 .link--footer{
   text-transform: uppercase;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 
 .link--footer:last-of-type{
   margin-right: 0;
+}
+
+
+@media (min-width: 43.75rem) {
+  .footer{
+    padding: 2rem;
+  }
+  .link--footer{
+    margin-right: 2rem;
+  }
 }
 
 
