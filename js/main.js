@@ -1,10 +1,13 @@
 $(function(){
+
   var content = $.parseHTML($("noscript").text()),
       $main = $('#main').append('<a href="#" class="skip link"> Skip typing</a>').append(content),
       $creations = $('#creations').addClass('hidden'),
       $scrollBtn = $('.scroll').remove();
-      $('footer').addClass('hidden')
+      $('footer').addClass('hidden');
+
   $main.data("scrollBtn", $scrollBtn)
+
   $main
     .on('click', '.scroll' ,function(e){
       var href = $.attr(this, "href")
@@ -12,7 +15,6 @@ $(function(){
           scrollTop: $(href).offset().top
         }, 250);
       $(this).blur();
-      // $('.scroll').toggleClass("ulta")
       return false;
     }).one('click', '.skip', function(){
       var content = $.parseHTML($("noscript").text());
@@ -33,11 +35,10 @@ observer.check().then(function () {
   !$('#main').hasClass('skip-typing') && $('#intro').t({
     speed: 40,
     speed_vary:true,
-    prefix: "> ",
     tag: "code",
     init: function($el) {
-      $el.prepend('<ins><span class="prefix"></span></ins>')
       $el.wrapInner("<div class='inner' />")
+      $('.init-loader').remove();
     },
     fin: function($el){
       $el.append($('#main').data("scrollBtn"));
@@ -49,11 +50,10 @@ observer.check().then(function () {
   $('#intro').t({
       speed: 40,
       speed_vary:true,
-      prefix: "> ",
       tag: "code",
       init: function($el) {
-        $el.prepend('<ins><span class="prefix"></span></ins>')
         $el.wrapInner("<div class='inner' />")
+        $('.init-loader').remove();
       },
       fin: function($el){
         $el.append($('#main').data("scrollBtn"))
@@ -61,4 +61,5 @@ observer.check().then(function () {
         $('.skip').remove()
       }
     })
+
 });

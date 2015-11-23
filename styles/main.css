@@ -9,30 +9,13 @@ html {
   box-sizing: inherit;
 }
 
-.js .no-js{
-  display: none;
-}
 
-.font-not-loaded #intro {
-  display: none;
+::selection {
+  background: #94C58D; /* WebKit/Blink Browsers */
 }
-
-/*.font-not-loaded #intro .inner:before{
-  content: "Loading";
-  color: #FC4747;
-  font-family: monospace;
-  float: left;
+::-moz-selection {
+  background: #94C58D; /* Gecko Browsers */
 }
-*/
-.font-loaded body{
-  font-family: 'Inconsolata';
-}
-
-.skip-typing > #intro{
-  display: block !important;
-}
-
-
 
 body {
   margin: 0;
@@ -56,6 +39,26 @@ body {
 
 .noscript.prefix, .fake-caret {
   display: none;
+}
+
+.js .no-js{
+  display: none;
+}
+
+.font-not-loaded #intro {
+  display: none;
+}
+
+.font-not-loaded .no-js #intro {
+  display: block;
+}
+
+.font-loaded body{
+  font-family: 'Inconsolata';
+}
+
+.skip-typing > #intro{
+  display: block !important;
 }
 
 ins{
@@ -114,7 +117,7 @@ h1, .t-caret, .fake-caret, .prefix {
   h1, .t-caret, .fake-caret, .prefix {
     font-size: 3rem;
     /* 3x body copy size = 48px */
-    line-height: 1.05;
+    line-height: 1.33;
     /* keep to a multiple of the 20px line height and something more appropriate for display headings */
   }
 }
@@ -166,7 +169,7 @@ code, dl, p, em, q {
 }
 
 .inner {
-  max-width: 54em;
+  max-width: 56em;
   margin: 0 auto;
 }
 
@@ -191,11 +194,21 @@ code, dl, p, em, q {
   font-family: inherit;
 }
 
+.nowrap{
+  white-space: nowrap;
+}
+
 ins{
   text-decoration: none;
 }
+
+.prefix{
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
 .prefix::before {
-  content: "> ";
+  content: ">";
   color: #FC4747;
   font-weight: 900;
 }
