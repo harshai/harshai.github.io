@@ -21,7 +21,6 @@ $(function(){
       $('#main').addClass('skip-typing')
       $('#main').empty().append(content)
       $('#intro').wrapInner("<div class='inner' />")
-      $(".inner > .prefix").remove();
       $(".noscript").removeClass("noscript");
       return false;
     });

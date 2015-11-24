@@ -26,6 +26,7 @@ body {
   min-width: 26.25rem;
   background-color: #203440;
   color: #CDCDCD;
+  transition: all 0.5s;
 }
 
 .no-js > #intro{
