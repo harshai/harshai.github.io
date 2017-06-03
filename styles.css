@@ -11,26 +11,24 @@ html {
 
 
 ::selection {
-  background: #94C58D; /* WebKit/Blink Browsers */
+  background: rgba(59, 153, 252, 0.2); /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
-  background: #94C58D; /* Gecko Browsers */
+  background: rgba(59, 153, 252, 0.5); /* Gecko Browsers */
 }
 
-.link {
-  color: #3b99fc;
-  cursor: pointer;
+a {
+  color: rgb(51, 114, 177);
+  text-decoration: underline;
 }
 
-
-.link:hover {
-  color: #5995DA;
+a:hover {
   text-decoration: none;
 }
 
-.link:active {
-  color: #407FC7;
+a:active{
+  outline: 1px;
 }
 
 .link--footer {
@@ -39,7 +37,7 @@ html {
 
 body {
   font: 1rem 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
-  color:  #666;
+  color:  #444;
   padding: 0 1rem;
   margin: 0;
 }
