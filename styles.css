@@ -13,38 +13,10 @@ html {
 ::selection {
   background: #94C58D; /* WebKit/Blink Browsers */
 }
+
 ::-moz-selection {
   background: #94C58D; /* Gecko Browsers */
 }
-
-body {
-  max-width: 40rem;
-  font: 1.2rem 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
-  color:  #666;
-  margin: 6rem 12%;
-  padding: 0 2rem;
-}
-
-@media screen and (max-width: 650px) {
-  body {
-    margin: 6rem 0;
-    padding: 0 1rem;
-  }
-
-  .footer {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.header {
-  font-size: 1.2rem;
-}
-
-.section {
-  margin: 4rem 0;
-}
-
 
 .link {
   color: #3b99fc;
@@ -63,4 +35,51 @@ body {
 
 .link--footer {
   margin-right: 1rem;
+}
+
+body {
+  font: 1.2rem 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
+  color:  #666;
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.section {
+  flex: 1;
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+
+
+@media screen and (min-width: 40rem) {
+  body {
+    max-width: 40rem;
+    margin: 6rem 12%;
+    padding: 0 2rem;
+  }
+
+  .header {
+    font-size: 1.2rem;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+    flex: none
+  }
+
+  .footer {
+    justify-content: flex-start;
+  }
 }
