@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  font: 1.2rem 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
+  font: 1rem 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
   color:  #666;
   padding: 0 2rem;
   margin: 0;
@@ -47,7 +47,8 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 2rem);
+  min-width: 20rem;
 }
 
 .section {
@@ -58,16 +59,30 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 35rem) {
+  body {
+    margin: 2rem;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+    flex: none
+  }
+
+  .footer {
+    justify-content: flex-start;
+  }
 }
 
 
-
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 60rem) {
   body {
     max-width: 40rem;
     margin: 6rem 12%;
     padding: 0 2rem;
+    font-size: 1.2em;
   }
 
   .header {
