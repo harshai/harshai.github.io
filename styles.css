@@ -31,12 +31,8 @@ a:active{
   outline: 1px;
 }
 
-.link--footer {
-  margin-right: 1rem;
-}
-
 body {
-  font: 1rem 'Cantarell', 'Open Sans', Helvetica, Arial, sans-serif;
+  font: 1.2rem 'Cantarell', 'Open Sans', Helvetica, Arial, sans-serif;
   color:  #444;
   padding: 0 1rem;
   margin: 0;
@@ -45,8 +41,12 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 1rem);
+  min-height: 100vh;
   min-width: 20rem;
+}
+
+.main p {
+  margin: 0.75rem 0;
 }
 
 .section {
@@ -56,14 +56,18 @@ body {
 
 .footer {
   display: flex;
-  padding-top: 0.5rem;
+  padding: 1rem 0;
   border-top: 1px solid #ECECEC;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 35rem) {
   body {
     margin: 2rem;
+  }
+
+  .main {
+    min-height: calc(100vh - 12rem)
   }
 
   .section {
@@ -74,6 +78,11 @@ body {
   .footer {
     justify-content: flex-start;
   }
+
+  .link--footer {
+    margin-right: 1rem;
+  }
+
 }
 
 
@@ -82,7 +91,6 @@ body {
     max-width: 40rem;
     margin: 6rem 12%;
     padding: 0 2rem;
-    font-size: 1.2em;
   }
 
   .header {
