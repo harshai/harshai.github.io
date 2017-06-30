@@ -28,7 +28,8 @@ a:hover {
 }
 
 a:active{
-  outline: 1px;
+  text-decoration: none;
+  color: rgb(17, 51, 119);
 }
 
 body {
