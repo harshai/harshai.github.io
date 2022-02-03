@@ -5,10 +5,11 @@ html {
   font-size: 100%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
-
 
 ::selection {
   background: rgba(59, 153, 252, 0.2); /* WebKit/Blink Browsers */
@@ -27,14 +28,15 @@ a:hover {
   text-decoration: none;
 }
 
-a:active{
+a:active {
   text-decoration: none;
   color: rgb(17, 51, 119);
 }
 
 body {
-  font: 1.2rem 'Cantarell', 'Open Sans', Helvetica, Arial, sans-serif;
-  color:  #444;
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+  color: #444;
   padding: 0 1rem;
   margin: 0;
 }
@@ -58,8 +60,9 @@ body {
 .footer {
   display: flex;
   padding: 1rem 0;
-  border-top: 1px solid #ECECEC;
+  border-top: 1px solid #ececec;
   justify-content: space-between;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 35rem) {
@@ -68,12 +71,12 @@ body {
   }
 
   .main {
-    min-height: calc(100vh - 12rem)
+    min-height: calc(100vh - 12rem);
   }
 
   .section {
     margin-bottom: 3rem;
-    flex: none
+    flex: none;
   }
 
   .footer {
@@ -83,9 +86,7 @@ body {
   .link--footer {
     margin-right: 1rem;
   }
-
 }
-
 
 @media screen and (min-width: 60rem) {
   body {
@@ -100,7 +101,7 @@ body {
 
   .section {
     margin-bottom: 3rem;
-    flex: none
+    flex: none;
   }
 
   .footer {
